@@ -24,3 +24,33 @@ pip3 install dpkt
 git clone https://github.com/earl86/redis-sniffer.git
 
 python3 -m pip install redis-sniffer/
+
+
+redis-sniffer -h
+usage: redis-sniffer [-h] (-i INTERFACE | -F FILE) [-p PORT] [--out OUT]
+                     [-l {debug,event,full}] [-el EVENT_LOG] [-fl FULL_LOG]
+                     [-f FILTER] [--append APPEND] [--extra EXTRA]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -i INTERFACE, --interface INTERFACE
+                        the interface to bind to
+  -F FILE, --file FILE  pcap file containing captured traffic to analyze
+  -p PORT, --port PORT  the port to grab packets from. Default: 6379
+  --out OUT             the location to generate the full or event logs,
+                        defaults to the directory the application is executed
+                        from
+  -l {debug,event,full}
+                        the type of log(s) you want to create. Default: full
+  -el EVENT_LOG, --event-log EVENT_LOG
+                        the name of the event outout file. Default:
+                        event_sniff
+  -fl FULL_LOG, --full-log FULL_LOG
+                        the name of the full sniff output file. Default:
+                        full_sniff
+  -f FILTER, --filter FILTER
+                        comma separated list of events to log(ex:
+                        setex,delete)
+  --append APPEND       the suffix to append to command logs
+  --extra EXTRA         log non-redis traffic
+
