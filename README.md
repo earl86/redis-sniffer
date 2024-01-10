@@ -10,11 +10,17 @@ All installation and usage documentation are now located at: https://redis-sniff
 python3 Install:
 
 pip3 install hiredis
+
 pip3 install pcap
+
 pip3 install pypcap
+
 pip3 install nose
+
 pip3 install codecov
+
 pip3 install dpkt
 
 git clone https://github.com/earl86/redis-sniffer.git
+
 python3 -m pip install redis-sniffer/
