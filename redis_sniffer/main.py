@@ -1,10 +1,9 @@
-import sys
-sys.path.append(".")
 import argparse
-from sniffer import Sniffer
-from log import Log
 import logging
 import os
+from .sniffer import Sniffer
+from .log import Log
+
 
 
 def main():
