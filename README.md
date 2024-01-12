@@ -123,3 +123,19 @@ redis-sniffer -i bond0 -p 6379 --out /var/log/redis-sniffer -f select
 
 --append - a suffix to append to the file names from using filters
 
+
+redis-sniffer -i bond4 -p 6380 --out /tmp/
+
+tail -f event_sniff 
+
+[b'set', b'a', b'1']
+
+[b'set', b'a', b'1']
+
+
+tail -f full_sniff 
+
+1705049403.276039 10.17.13.2:63901            81       59 [b'set', b'a', b'1']
+
+1705049404.527709 10.17.13.2:63901            81       59 [b'set', b'a', b'1']
+
