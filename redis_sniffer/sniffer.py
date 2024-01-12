@@ -142,7 +142,6 @@ class RedisSession():
             while command is not False:
                 self.commands.append(' '.join(str(command)))
                 command = self.req_reader.gets()
-                print(command)
         except hiredis.ProtocolError:
             logging.debug('Partial command')
 
