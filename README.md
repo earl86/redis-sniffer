@@ -11,8 +11,6 @@ python3 Install:
 
 pip3 install hiredis
 
-pip3 install pcap
-
 pip3 install pypcap
 
 pip3 install nose
