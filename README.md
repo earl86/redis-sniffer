@@ -7,6 +7,7 @@ This tool will monitor a specific port and interface for redis traffic and captu
 
 All installation and usage documentation are now located at: https://redis-sniffer.readme.io/docs/getting-started
 
+# Install
 python3 Install:
 
 pip3 install hiredis
@@ -23,6 +24,8 @@ git clone https://github.com/earl86/redis-sniffer.git
 
 python3 -m pip install redis-sniffer/
 
+
+# Help
 
 redis-sniffer -h
 
@@ -83,7 +86,7 @@ optional arguments:
 
 
 
-Usage
+# Usage
 
 You've got it installed, but how to use it.
 
@@ -93,8 +96,6 @@ Redis Sniffer binds to a network interface and analyzes the traffic that is cros
 
 At the most basic level using Redis Sniffer is extremely simple.
 
-Shell
-
 redis-sniffer -i <interface> -p <port>
 
 # example
@@ -103,26 +104,17 @@ redis-sniffer -i eth0 -p 6379
 
 This will cause all redis events going across eth0 on port 6379 to be logged. When used without the '--out' flag, Redis Sniffer will log to the current working directory. Below are some examples of other options that can be used and their affect.
 
-Shell
 
-# log all redis traffic on port 6379 crossing bond0 interface and have the logs written to the /var/log/redis-sniffer folder
+## log all redis traffic on port 6379 crossing bond0 interface and have the logs written to the /var/log/redis-sniffer folder
 
 redis-sniffer -i bond0 -p 6379 --out /var/log/redis-sniffer
 
-# log only select redis commands; -f allows a comma separated list of redis commands to log.  when using the -f flag, each command specified will be logged to a seperate file
+## log only select redis commands; -f allows a comma separated list of redis commands to log.  when using the -f flag, each command specified will be logged to a seperate file
 
 redis-sniffer -i bond0 -p 6379 --out /var/log/redis-sniffer -f select
 
-# other options
 
--l [full,event,debug] - the level of logging, defaults to full
-
--el, --event-log - The name of the file that redis events are logged to
-
--fl, --full-log - The name of the file that all traffic is logged to
-
---append - a suffix to append to the file names from using filters
-
+## example result
 
 redis-sniffer -i bond4 -p 6380 --out /tmp/
 
