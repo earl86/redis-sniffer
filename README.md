@@ -91,7 +91,7 @@ Redis Sniffer binds to a network interface and analyzes the traffic that is cros
 
 At the most basic level using Redis Sniffer is extremely simple.
 
-redis-sniffer -i <interface> -p <port> --out /dir/
+redis-sniffer -i [interface] -p [port] --out [/dir/]
 
 # example
 
