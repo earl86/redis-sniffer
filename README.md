@@ -90,13 +90,11 @@ usage: redis-sniffer [-h]
 
 You've got it installed, but how to use it.
 
-Suggest Edits
-
 Redis Sniffer binds to a network interface and analyzes the traffic that is crossing the interface on the specified port.
 
 At the most basic level using Redis Sniffer is extremely simple.
 
-redis-sniffer -i <interface> -p <port>
+redis-sniffer -i <interface> -p <port> --out /dir/
 
 # example
 
@@ -107,11 +105,11 @@ This will cause all redis events going across eth0 on port 6379 to be logged. Wh
 
 ## log all redis traffic on port 6379 crossing bond0 interface and have the logs written to the /var/log/redis-sniffer folder
 
-redis-sniffer -i bond0 -p 6379 --out /var/log/redis-sniffer
+redis-sniffer -i bond0 -p 6379 --out /var/log/redis-sniffer/
 
 ## log only select redis commands; -f allows a comma separated list of redis commands to log.  when using the -f flag, each command specified will be logged to a seperate file
 
-redis-sniffer -i bond0 -p 6379 --out /var/log/redis-sniffer -f select
+redis-sniffer -i bond0 -p 6379 --out /var/log/redis-sniffer/ -f select
 
 
 ## example result
