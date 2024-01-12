@@ -5,7 +5,9 @@
 This tool will monitor a specific port and interface for redis traffic and captures the commands being sent to Redis and/or formatted full TCP dump data.  This can be used for analysis for debugging or for replaying the transactions as a way of doing real load/performance testing.
 
 # Install
-python3 Install:
+yum install libpcap
+
+yum install libpcap-devel
 
 pip3 install hiredis
 
