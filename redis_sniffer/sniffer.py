@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """ A redis query sniffer
 """
@@ -59,7 +59,6 @@ class Sniffer:
             ip_pkt = ether_pkt.data
             tcp_pkt = ip_pkt.data
             tcp_data = tcp_pkt.data
-
             logging.debug("Checking the length of the tcp packet")
 
             if len(tcp_data) == 0:
@@ -102,12 +101,14 @@ class Sniffer:
 
 def packet_iterator(interface, redis_port=6379, src_ip=None, dst_ip=None):
     filter = 'tcp port %s' % redis_port
+    print(filter)
     if src_ip:
         filter += ' and src %s' % src_ip
     if dst_ip:
         filter += ' and dst %s' % dst_ip
 
-    pc = pcap.pcap(interface)
+    pc = pcap.pcap(interface, promisc=True, immediate=True, timeout_ms=50)
+    print(pcap.findalldevs())
     pc.setfilter(filter)
 
     return pc
@@ -139,8 +140,9 @@ class RedisSession():
             command = self.req_reader.gets()
             # command will be False or an array of tokens that describe the command
             while command is not False:
-                self.commands.append(' '.join(command))
+                self.commands.append(' '.join(str(command)))
                 command = self.req_reader.gets()
+                print(command)
         except hiredis.ProtocolError:
             logging.debug('Partial command')
 
