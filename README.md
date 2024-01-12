@@ -50,7 +50,7 @@ usage: redis-sniffer [-h]
 [--extra EXTRA]
 
 
-optional arguments:
+### optional arguments:
 
   -h, --help            show this help message and exit
   
