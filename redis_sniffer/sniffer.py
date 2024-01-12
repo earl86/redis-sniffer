@@ -140,7 +140,7 @@ class RedisSession():
             command = self.req_reader.gets()
             # command will be False or an array of tokens that describe the command
             while command is not False:
-                self.commands.append(' '.join(str(command)))
+                self.commands.append(''.join(str(command)))
                 command = self.req_reader.gets()
         except hiredis.ProtocolError:
             logging.debug('Partial command')
